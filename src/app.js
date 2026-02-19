@@ -2,20 +2,14 @@ const express = require('express')
 
 const app = express();
 
-app.use((req,res)=>{
-    if(req.url === '/'){
-    res.send("hello, from the server");
-    }
-    else if (req.url === '/admin') {
-        res.send("hello, from the admin");
-    }
-    else if (req.url === '/employee') {
-        res.send("hello, from the employee");
-    }
-     else {
-        res.send("hello, from the client");
-    }
-})
+app.get("/user/:age/:name/:department",(req,res)=>{
+    console.log(req.params);
+    console.log(req.query);
+    res.send({
+        userName : "Yuvraj Singh",
+        department : "Dev Team"
+    })
+});
 
 const port = 3001
 app.listen(port,()=>{
