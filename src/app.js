@@ -2,19 +2,13 @@ const express = require('express')
 
 const app = express();
 
-app.get('/user',(req,res)=>{
+app.get("/user/:age/:name/:department",(req,res)=>{
+    console.log(req.params);
+    console.log(req.query);
     res.send({
         userName : "Yuvraj Singh",
         department : "Dev Team"
     })
-});
-
-app.post("/user",(req,res)=>{
-    res.send('Save data successfully to the database');
-});
-
-app.delete("/user",(req,res)=>{
-    res.send('data deleted successfully from the databse');
 });
 
 const port = 3001
