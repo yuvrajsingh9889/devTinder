@@ -12,6 +12,9 @@ app.use((req,res)=>{
     else if (req.url === '/employee') {
         res.send("hello, from the employee");
     }
+    else if (req.url === '/hr') {
+        res.send("hello, from the hr");
+    }
      else {
         res.send("hello, from the client");
     }
